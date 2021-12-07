@@ -240,8 +240,6 @@ double calculator::declaration(bool constant){
 
 	if(is_declared(name)){
 
-		ts.unget(t);
-
         return assign(name);
 
     }

@@ -252,7 +252,7 @@ double calculator::declaration(bool constant){
 
 	}
 
-	double d = expression();
+	double d = statement();
 
     names.push_back(Variable(name, d, constant));
 
@@ -365,7 +365,7 @@ double calculator::assign(string s){
 
 	}
 
-	double d = expression();
+	double d = statement();
 
 	set_value(s, d);
 
@@ -383,7 +383,7 @@ double calculator::square_root(){
 
 	}
 
-	double d = expression();
+	double d = statement();
 
 	if(d < 0){
 
@@ -413,7 +413,7 @@ double calculator::power(){
 
 	}
 
-	double base = expression();
+	double base = statement();
 
 	t = ts.get();
 
@@ -423,7 +423,7 @@ double calculator::power(){
 
 	}
 
-	double exponent = expression();
+	double exponent = statement();
 
 	t = ts.get();
 

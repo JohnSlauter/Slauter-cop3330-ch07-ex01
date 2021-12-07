@@ -128,6 +128,18 @@ double calculator::primary()
 
         }
 
+		case SQRT:{
+
+			return square_root();
+
+		}
+
+		case POW:{
+
+			return power();
+
+		}
+
 	    default:{
 
 		    error("primary expected");
@@ -252,7 +264,7 @@ double calculator::declaration(bool constant){
 
 	}
 
-	double d = statement();
+	double d = expression();
 
     names.push_back(Variable(name, d, constant));
 
@@ -275,18 +287,6 @@ double calculator::statement(){
         return declaration(true);
 
     }
-
-	else if(t.kind == SQRT){
-
-		return square_root();
-
-	}
-
-	else if(t.kind == POW){
-
-		return power();
-
-	}
 
 	else{
 	
@@ -365,7 +365,7 @@ double calculator::assign(string s){
 
 	}
 
-	double d = statement();
+	double d = expression();
 
 	set_value(s, d);
 
@@ -383,7 +383,7 @@ double calculator::square_root(){
 
 	}
 
-	double d = statement();
+	double d = expression();
 
 	if(d < 0){
 
@@ -413,7 +413,7 @@ double calculator::power(){
 
 	}
 
-	double base = statement();
+	double base = expression();
 
 	t = ts.get();
 
@@ -423,7 +423,7 @@ double calculator::power(){
 
 	}
 
-	double exponent = statement();
+	double exponent = expression();
 
 	t = ts.get();
 

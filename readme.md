@@ -1,8 +1,6 @@
-|CALCULATOR USER GUIDE|
-
 1). Using the Calculator
     The calculator prompts for input with ">" and precedes the result of the input with "=".
-    Supported Operations: Addition (+), Subtraction (-), Multiplication (*), Division (/)
+    Supported Operations: Addition (+), Subtraction (-), Multiplication (*), Division (/).
     To submit input, type ";".
     
     Example

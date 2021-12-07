@@ -383,7 +383,7 @@ double calculator::square_root(){
 
 	}
 
-	double d = expression();
+	double d = statement();
 
 	if(d < 0){
 
@@ -413,7 +413,7 @@ double calculator::power(){
 
 	}
 
-	double base = expression();
+	double base = statement();
 
 	t = ts.get();
 
@@ -423,7 +423,7 @@ double calculator::power(){
 
 	}
 
-	double exponent = expression();
+	double exponent = statement();
 
 	t = ts.get();
 

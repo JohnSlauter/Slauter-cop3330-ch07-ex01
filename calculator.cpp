@@ -276,6 +276,18 @@ double calculator::statement(){
 
     }
 
+	else if(t.kind == SQRT){
+
+		return square_root();
+
+	}
+
+	else if(t.kind == POW){
+
+		return power();
+
+	}
+
 	else{
 	
 		ts.unget(t);
@@ -283,6 +295,8 @@ double calculator::statement(){
     	return expression();
 
 	}
+
+	error("Invalid statement");
 
 }
 
@@ -356,6 +370,70 @@ double calculator::assign(string s){
 	set_value(s, d);
 
 	return d;
+
+}
+
+double calculator::square_root(){
+
+	Token t = ts.get();
+
+	if(t.kind != '('){
+
+		error("( expected");
+
+	}
+
+	double d = expression();
+
+	if(d < 0){
+
+		error("Cannot take the square root of a negative number");
+
+	}
+
+	t = ts.get();
+
+	if(t.kind != ')'){
+
+		error(") expected");
+
+	}
+
+	return sqrt(d);
+
+}
+
+double calculator::power(){
+
+	Token t = ts.get();
+
+	if(t.kind != '('){
+
+		error("( expected");
+
+	}
+
+	double base = expression();
+
+	t = ts.get();
+
+	if(t.kind != ','){
+
+		error(", expected");
+
+	}
+
+	double exponent = expression();
+
+	t = ts.get();
+
+	if(t.kind != ')'){
+
+		error(") expected");
+
+	}
+
+	return(pow(base, exponent));
 
 }
 

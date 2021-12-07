@@ -47,6 +47,10 @@ namespace calculator{
 
     Variable* get(string s);
 
+    double square_root();
+
+    double power();
+
 }
 
 #endif

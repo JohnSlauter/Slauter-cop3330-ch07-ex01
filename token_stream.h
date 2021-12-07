@@ -20,6 +20,10 @@ const char NAME = 'a';
 
 const char CONST = 'c';
 
+const char SQRT = 's';
+
+const char POW = 'p';
+
 class Token_stream {
 	
 	bool full;

@@ -252,7 +252,7 @@ double calculator::declaration(bool constant){
 
 	}
 
-	double d = expression();
+	double d = statement();
 
     names.push_back(Variable(name, d, constant));
 
@@ -365,7 +365,7 @@ double calculator::assign(string s){
 
 	}
 
-	double d = expression();
+	double d = statement();
 
 	set_value(s, d);
 

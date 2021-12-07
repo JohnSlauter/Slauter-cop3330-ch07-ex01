@@ -243,9 +243,31 @@ double calculator::declaration(bool constant){
 
 	Token t = ts.get();
 
-	if (t.kind != NAME){ 
-		
-		error("Name expected in declaration");
+	switch(t.kind){
+
+		case NAME:{
+
+			break;
+
+		}
+
+		case LET:
+		case CONST:
+		case SQRT:
+		case POW:
+		case QUIT:{
+
+			error("Variables cannot have the same name as keywords");
+
+		}
+
+		default:{
+
+			error("Name expected in declaration");
+
+		}
+
+
 	}
 
 	string name = t.name;

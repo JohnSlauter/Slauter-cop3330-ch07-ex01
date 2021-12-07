@@ -34,6 +34,7 @@ Token Token_stream::get()
 	case '/':
 	case '%':
 	case ';':
+	case ',':
 	case '=':
 		return Token(ch);	
 	case '.':
@@ -86,6 +87,18 @@ Token Token_stream::get()
                     return Token(LET);
             
                 }
+
+				if (s == "SQRT"){
+
+					return Token(SQRT);
+
+				}
+
+				if(s == "POW"){
+
+					return Token(POW);
+
+				}
 
                 if (s == "CONST"){
 
